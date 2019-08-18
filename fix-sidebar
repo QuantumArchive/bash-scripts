@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo rm -rf ~/.cache/compizconfig-1
+sudo rm -rf ~/.compiz
+sudo rm -rf ~/.Xauthority
+sudo dconf reset -f /org/compiz/
+setsid unity
+sudo reboot
+
