@@ -1,19 +1,19 @@
 #!/bin/bash
 
+CLEANUP=false
 DIR=""
 DIR_NAME=""
-CLEANUP=false
-VERBOSE=false
 REMOVE_ORIGINAL=false
+VERBOSE=false
 
-while getopts c:d:v:r: option
+while getopts c:d:r:v: option
 do
 case "${option}"
 in
 c) CLEANUP=${OPTARG};;
 d) DIR=${OPTARG};;
-v) VERBOSE=${OPTARG};;
 r) REMOVE_ORIGINAL=${OPTARG};;
+v) VERBOSE=${OPTARG};;
 esac
 done
 

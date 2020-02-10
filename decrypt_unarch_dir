@@ -1,14 +1,16 @@
 #!/bin/bash
 
+CLEANUP=false
 FILE=""
 FILE_NAME=""
 REMOVE_ORIGINAL=false
 VERBOSE=false
 
-while getopts f:r:v: option
+while getopts c:f:r:v: option
 do
 case "${option}"
 in
+c) CLEANUP=${OPTARG};;
 f) FILE=${OPTARG};;
 r) REMOVE_ORIGINAL=${OPTARG};;
 v) VERBOSE=${OPTARG};;
@@ -28,4 +30,8 @@ gpg -o "${FILE_NAME}.tar.gz" -d $FILE && tar fvxz "${FILE_NAME}.tar.gz"
 
 if [ "${REMOVE_ORIGINAL}" == true ]; then
     rm $FILE
+fi
+
+if [ "${CLEANUP}" == true ]; then
+    rm "${FILE_NAME}.tar.gz"
 fi
