@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR=$1
+DIR_NAME=${DIR%/}
+CLEANUP=false
+
+while getopts c: option
+do
+case "${option}"
+in
+c) CLEANUP=true;;
+esac
+done
+
+tar cfvz "./${DIR_NAME}.tar.gz" $1 && gpg -o "./${DIR_NAME}.tar.gz.gpg" -c "${DIR_NAME}.tar.gz"
+
+if [ "${CLEANUP}" == true ]; then
+    rm "./${DIR_NAME}.tar.gz"
+fi
