@@ -1,29 +1,29 @@
 #!/bin/bash
 
+CLEANUP=false
 DIR=""
 DIR_NAME=""
-CLEANUP=false
-VERBOSE=false
 REMOVE_ORIGINAL=false
+VERBOSE=false
 
-while getopts c:d:v:r: option
+while getopts c:d:r:v: option
 do
 case "${option}"
 in
 c) CLEANUP=${OPTARG};;
 d) DIR=${OPTARG};;
-v) VERBOSE=${OPTARG};;
 r) REMOVE_ORIGINAL=${OPTARG};;
+v) VERBOSE=${OPTARG};;
 esac
 done
 
 DIR_NAME=${DIR%/}
 
 if [ "${VERBOSE}" == true ]; then
-  echo "CLEANUP ${CLEANUP}"
-  echo "DIR ${DIR}"
-  echo "DIR_NAME ${DIR_NAME}"
-  echo "REMOVE_ORIGINAL ${REMOVE_ORIGINAL}"
+    echo "CLEANUP ${CLEANUP}"
+    echo "DIR ${DIR}"
+    echo "DIR_NAME ${DIR_NAME}"
+    echo "REMOVE_ORIGINAL ${REMOVE_ORIGINAL}"
 fi
 
 tar cfvz "${DIR_NAME}.tar.gz" $DIR && gpg -o "${DIR_NAME}.tar.gz.gpg" -c "${DIR_NAME}.tar.gz"
