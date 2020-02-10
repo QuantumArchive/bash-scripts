@@ -1,0 +1,31 @@
+#!/bin/bash
+
+FILE=""
+FILE_NAME=""
+REMOVE_ORIGINAL=false
+VERBOSE=false
+
+while getopts f:r:v: option
+do
+case "${option}"
+in
+f) FILE=${OPTARG};;
+r) REMOVE_ORIGINAL=${OPTARG};;
+v) VERBOSE=${OPTARG};;
+esac
+done
+
+FILE_NAME=${FILE%.tar.gz.gpg}
+
+if [ "${VERBOSE}" == true ]; then
+    echo "FILE ${FILE}"
+    echo "FILE_NAME ${FILE_NAME}"
+fi
+
+# Assume that the file was encrypted using encryption script
+# the file should be postfixed with `.tar.gz.gpg`
+gpg -o "${FILE_NAME}.tar.gz" -d $FILE && tar fvxz "${FILE_NAME}.tar.gz"
+
+if [ "${REMOVE_ORIGINAL}" == true ]; then
+    rm $FILE
+fi
