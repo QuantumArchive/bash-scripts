@@ -40,4 +40,7 @@ sudo apt-get install code
 echo "set HISTFILE=/dev/null" >> $HOME/.bashrc
 echo "set HISTSIZE=\"\"" >> $HOME/.bashrc
 
+# modify all aliases on .bashrc
+echo "alias gpoh=\"git push origin HEAD\"" >> $HOME/.bashrc
+
 source $HOME/.bashrc
