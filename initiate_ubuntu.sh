@@ -37,8 +37,8 @@ sudo apt-get update
 sudo apt-get install code
 
 # modify .bashrc file
-echo "set HISTFILE=/dev/null" >> $HOME/.bashrc
-echo "set HISTSIZE=\"\"" >> $HOME/.bashrc
+echo "export HISTFILE=/dev/null" >> $HOME/.bashrc
+echo "export HISTSIZE=\"\"" >> $HOME/.bashrc
 
 # modify all aliases on .bashrc
 echo "alias gpoh=\"git push origin HEAD\"" >> $HOME/.bashrc
