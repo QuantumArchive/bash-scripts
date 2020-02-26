@@ -40,6 +40,7 @@ sudo apt-get install code
 # modify .bashrc file
 echo "export HISTFILE=/dev/null" >> $HOME/.bashrc
 echo "export HISTSIZE=\"\"" >> $HOME/.bashrc
+echo "umask 027" >> $HOME/.bashrc # all files created give no access to other
 
 # modify all aliases on .bashrc
 echo "alias gpoh=\"git push origin HEAD\"" >> $HOME/.bashrc
