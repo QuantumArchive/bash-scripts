@@ -14,6 +14,7 @@ sudo apt-get install tmux
 sudo apt-get install xclip
 sudo apt-get install git
 sudo apt-get install vim
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # Assuming I'm still using openvpn as my local vpn
 sudo apt-get install openvpn
@@ -37,8 +38,8 @@ sudo apt-get update
 sudo apt-get install code
 
 # modify .bashrc file
-echo "set HISTFILE=/dev/null" >> $HOME/.bashrc
-echo "set HISTSIZE=\"\"" >> $HOME/.bashrc
+echo "export HISTFILE=/dev/null" >> $HOME/.bashrc
+echo "export HISTSIZE=\"\"" >> $HOME/.bashrc
 
 # modify all aliases on .bashrc
 echo "alias gpoh=\"git push origin HEAD\"" >> $HOME/.bashrc
