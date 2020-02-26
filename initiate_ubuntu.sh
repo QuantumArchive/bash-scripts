@@ -14,6 +14,7 @@ sudo apt-get install tmux
 sudo apt-get install xclip
 sudo apt-get install git
 sudo apt-get install vim
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # Assuming I'm still using openvpn as my local vpn
 sudo apt-get install openvpn
