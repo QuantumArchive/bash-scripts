@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 USERNAME=$1
 
 if [ -z $USERNAME ]; then
