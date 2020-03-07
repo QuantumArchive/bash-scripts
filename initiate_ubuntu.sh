@@ -18,6 +18,7 @@ sudo apt-get install git
 sudo apt-get install vim
 sudo apt-get install dpkg
 sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install vlc
 
 # Assuming I'm still using openvpn as my local vpn
 sudo apt-get install openvpn
