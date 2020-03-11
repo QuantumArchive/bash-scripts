@@ -18,6 +18,9 @@ sudo apt-get install git
 sudo apt-get install vim
 sudo apt-get install dpkg
 sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install vlc
+sudo apt-get install slack
+sudo apt-get install discord
 
 # Assuming I'm still using openvpn as my local vpn
 sudo apt-get install openvpn
@@ -43,6 +46,7 @@ sudo apt-get install code
 # modify .bashrc file
 echo "export HISTFILE=/dev/null" >> $HOME/.bashrc
 echo "export HISTSIZE=\"\"" >> $HOME/.bashrc
+echo "export EDITOR=vim" >> $HOME/.bashrc
 echo "umask 027" >> $HOME/.bashrc # all files created give no access to other
 
 # modify all aliases on .bashrc
