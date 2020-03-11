@@ -19,6 +19,8 @@ sudo apt-get install vim
 sudo apt-get install dpkg
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo apt-get install vlc
+sudo apt-get install slack
+sudo apt-get install discord
 
 # Assuming I'm still using openvpn as my local vpn
 sudo apt-get install openvpn
