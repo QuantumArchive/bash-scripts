@@ -21,6 +21,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo apt-get install vlc
 sudo apt-get install slack
 sudo apt-get install discord
+sudo apt-get install build-essential
 
 # git packages
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
