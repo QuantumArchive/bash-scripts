@@ -51,10 +51,16 @@ echo 'export HISTFILE=/dev/null' >> $HOME/.bashrc
 echo 'export HISTSIZE=\"\"' >> $HOME/.bashrc
 echo 'export EDITOR=vim' >> $HOME/.bashrc
 echo 'umask 027' >> $HOME/.bashrc # all files created give no access to other
+
+# adding pyenv to path and shell startup
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.bashrc
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 
 # modify all aliases on .bashrc
 echo "alias gpoh=\"git push origin HEAD\"" >> $HOME/.bashrc
 
 source $HOME/.bashrc
+
+# look into this buy should restart the current shell session
+# exec "$SHELL"
