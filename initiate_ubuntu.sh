@@ -12,16 +12,32 @@ fi
 sudo apt-get update
 
 # Add the following packages
-sudo apt-get install tmux
-sudo apt-get install xclip
-sudo apt-get install git
-sudo apt-get install vim
-sudo apt-get install dpkg
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo apt-get install vlc
-sudo apt-get install slack
-sudo apt-get install discord
-sudo apt-get install build-essential
+sudo apt-get install -y
+  build-essential \
+  curl \
+  discord \
+  docker-ce docker-ce-cli containerd.io \
+  dpkg \
+  git \
+  libbz2-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libssl-dev \
+  llvm \
+  libffi-dev \
+  liblzma-dev \
+  python-openssl \
+  slack \
+  tk-dev \
+  tmux \
+  vim \
+  vlc \
+  wget \
+  xclip \
+  xz-utils \
+  zlib1g-dev
 
 # git packages
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
