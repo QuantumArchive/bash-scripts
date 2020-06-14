@@ -36,6 +36,7 @@ sudo apt-get install -y
   vlc \
   wget \
   xclip \
+  xen-hypervisor-amd64 \
   xz-utils \
   zlib1g-dev
 
