@@ -12,11 +12,10 @@ fi
 sudo apt-get update
 
 # Add the following packages
-sudo apt-get install -y
+sudo apt-get install -y \
   build-essential \
   curl \
-  discord \
-  docker-ce docker-ce-cli containerd.io \
+  docker \
   dpkg \
   git \
   libbz2-dev \
@@ -40,18 +39,20 @@ sudo apt-get install -y
   xz-utils \
   zlib1g-dev
 
-# git packages
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+# snap install discord
+
+# git packages TODO: anything that clones to or moves to directory check first
+# git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 # Assuming I'm still using openvpn as my local vpn
 sudo apt-get install openvpn
-mkdir $HOME/.openvpn
+# mkdir $HOME/.openvpn TODO: check if directory exists before attempting
 chown $1:$1 $HOME/.openvpn
 chmod 760 $HOME/.openvpn
 
 # Create any necessary directories
 mkdir $HOME/Apps
-mkdir $HOME/Projects
+# mkdir $HOME/Projects
 
 # Turn on necessary services
 sudo ufw enable # turn on firewall
